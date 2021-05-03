@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: configuration_server
+    label: main
+  cloud:
+    config:
+      server:
+        git:
+          #uri: https://github.com/xavi78/futursMicroservice.git
+          uri: https://github.com/albertogc420/spring-microservices.git
+          search-paths:
+            - "configuration_server_repository/{application}/{profile}"
+          #default-label: main
+          default-label: main
+        # username:
+       # password:
+
+server:
+  port: 8888

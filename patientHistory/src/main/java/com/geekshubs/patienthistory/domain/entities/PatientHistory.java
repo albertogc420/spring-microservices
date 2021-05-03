@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.Date;
 import java.util.UUID;
 
 
@@ -34,6 +35,11 @@ public class PatientHistory {
 
     @Column
     private String specialty;
+
+    @Column
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date datecreated = new Date();
 
     public PatientHistory(String patientName, String patientLastName, String patientUuid, String doctor, String specialty) {
         this.patientName = patientName;
